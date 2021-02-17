@@ -12,7 +12,7 @@ class ChatRoomConsumer(AsyncWebsocketConsumer):
             self.channel_name
         )
 
-        await self.accept()
+        await self.accept('Token')
 
     async def disconnect(self, close_code):
         await self.channel_layer.group_discard(
