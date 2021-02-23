@@ -127,6 +127,9 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
 ASGI_APPLICATION = "core.routing.application"
 
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.core.RedisChannelLayer",
